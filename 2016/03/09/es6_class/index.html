@@ -26,7 +26,7 @@ function Car() {
 Person.prototype.show = func">
 <meta property="og:image" content="http://yoursite.com/1.png">
 <meta property="og:image" content="http://yoursite.com/2.png">
-<meta property="og:updated_time" content="2016-03-23T12:57:39.136Z">
+<meta property="og:updated_time" content="2016-03-23T12:59:08.324Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES2015之class">
 <meta name="twitter:description" content="随着ES2015（下面都用其别名ES6代替）的诞生，js的标准内定义一个类的语法和一些常见的面向对象的语言类似了，有了class后，js的面向对象写法更加清晰，方便。
@@ -262,6 +262,7 @@ let aMan = new Person();
 <li>类内的所有方法的定义不再需要用到function关键字，并且所有方法之间不能用分号隔开，否则报错。</li>
 <li>实例化类的方式和以前一样。</li>
 </ol>
+<a id="more"></a>
 <p>其实ES6内的Class只是一个语法糖，就是说Class只是一个ES5定义类的语法的一个包装而已。ES6的类也有prototype等等的一些元素。</p>
 <pre><code>alert(typeof Person) //function
 alert(Person.prototype.constructor === Person) //true
@@ -274,7 +275,6 @@ alert(aMan.name) // eason
 <li>ES6中写在构造函数外的方法或者属性，相当于ES5中定义在原型上的属性方法。</li>
 <li>ES6的类是个语法包装。方便代码的组织，让js面向对象编程更加清晰。</li>
 </ol>
-<a id="more"></a>
 <p>下面继续ES6 class的语法</p>
 <p>###get、set</p>
 <pre><code>class MyClass {
