@@ -70,7 +70,7 @@
 						<li>Tags</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -203,14 +203,15 @@
 <p>在ES5的时候，最常用到的定义类及其属性、方法的语法应该是下面这种：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'BMW'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.show = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aCar = <span class="keyword">new</span> Car();</span><br></pre></td></tr></table></figure>
 <p>这种写法，使得一个类看起来很散乱，没有整体的一个类的感觉。</p>
-<p>而在ES6中定义一个类的基本语法是这样的：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Class Person &#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">	 <span class="keyword">this</span>.name = <span class="string">'eason'</span>;</span><br><span class="line">	 <span class="keyword">this</span>.sex = <span class="string">'male'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  show() &#123;</span><br><span class="line">	 <span class="built_in">console</span>.log(<span class="string">'hi'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> aMan = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure></p>
-<p>这里有几个语法上的点需要注意：</p>
-<ol>
+<p>而在ES6中定义一个类的基本语法是这样的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Class Person &#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">	 <span class="keyword">this</span>.name = <span class="string">'eason'</span>;</span><br><span class="line">	 <span class="keyword">this</span>.sex = <span class="string">'male'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  show() &#123;</span><br><span class="line">	 <span class="built_in">console</span>.log(<span class="string">'hi'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> aMan = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+<h5 id="这里有几个语法上的点需要注意："><a href="#这里有几个语法上的点需要注意：" class="headerlink" title="这里有几个语法上的点需要注意："></a>这里有几个语法上的点需要注意：</h5><ol>
 <li>类名后面不要加括号</li>
 <li>类内部的constructor用来定义类内部的属性，如果没有显式的写入constructor，那么系统会自动加入一个空的constructor，这是必须的，因为在实例化的时候需要用到这个函数。</li>
 <li>类内的所有方法的定义不再需要用到function关键字，并且所有方法之间不能用分号隔开，否则报错。</li>
 <li>实例化类的方式和以前一样。</li>
 </ol>
+<hr>
       
     </div>
     
