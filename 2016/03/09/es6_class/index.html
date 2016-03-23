@@ -8,34 +8,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="随着ES2015（下面都用其别名ES6代替）的诞生，js的标准内定义一个类的语法和一些常见的面向对象的语言类似了，有了class后，js的面向对象写法更加清晰，方便。
 在ES5的时候，最常用到的定义类及其属性、方法的语法应该是下面这种：
-function Car() {
-    this.name = &amp;apos;BMW&amp;apos;;
-}
-
-Person.prototype.show = func">
+123456789function Car() &amp;#123;  this.name = &apos;BMW&apos;;&amp;#125;Person.prototype.show = f">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES2015之class">
 <meta property="og:url" content="http://yoursite.com/2016/03/09/es6_class/index.html">
 <meta property="og:site_name" content="Embrace">
 <meta property="og:description" content="随着ES2015（下面都用其别名ES6代替）的诞生，js的标准内定义一个类的语法和一些常见的面向对象的语言类似了，有了class后，js的面向对象写法更加清晰，方便。
 在ES5的时候，最常用到的定义类及其属性、方法的语法应该是下面这种：
-function Car() {
-    this.name = &amp;apos;BMW&amp;apos;;
-}
-
-Person.prototype.show = func">
+123456789function Car() &amp;#123;  this.name = &apos;BMW&apos;;&amp;#125;Person.prototype.show = f">
 <meta property="og:image" content="http://yoursite.com/1.png">
 <meta property="og:image" content="http://yoursite.com/2.png">
-<meta property="og:updated_time" content="2016-03-23T12:59:08.324Z">
+<meta property="og:updated_time" content="2016-03-23T13:22:10.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES2015之class">
 <meta name="twitter:description" content="随着ES2015（下面都用其别名ES6代替）的诞生，js的标准内定义一个类的语法和一些常见的面向对象的语言类似了，有了class后，js的面向对象写法更加清晰，方便。
 在ES5的时候，最常用到的定义类及其属性、方法的语法应该是下面这种：
-function Car() {
-    this.name = &amp;apos;BMW&amp;apos;;
-}
-
-Person.prototype.show = func">
+123456789function Car() &amp;#123;  this.name = &apos;BMW&apos;;&amp;#125;Person.prototype.show = f">
 <meta name="twitter:image" content="http://yoursite.com/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Embrace" type="application/atom+xml">
@@ -232,30 +220,10 @@ Person.prototype.show = func">
       
         <p>随着ES2015（下面都用其别名ES6代替）的诞生，js的标准内定义一个类的语法和一些常见的面向对象的语言类似了，有了class后，js的面向对象写法更加清晰，方便。</p>
 <p>在ES5的时候，最常用到的定义类及其属性、方法的语法应该是下面这种：</p>
-<pre><code>function Car() {
-    this.name = &apos;BMW&apos;;
-}
-
-Person.prototype.show = function () {
-    alert(this.name);
-}
-
-var aCar = new Car();
-</code></pre><p>这种写法，使得一个类看起来很散乱，没有整体的一个类的感觉。</p>
-<p>而在ES6中定义一个类的基本语法是这样的：</p>
-<pre><code>Class Person {
-    constructor() {
-        this.name = &apos;eason&apos;;
-        this.sex = &apos;male&apos;;
-    }
-
-    show() {
-        console.log(&apos;hi&apos;);
-    }
-}
-
-let aMan = new Person();
-</code></pre><p>这里有几个语法上的点需要注意：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'BMW'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.show = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aCar = <span class="keyword">new</span> Car();</span><br></pre></td></tr></table></figure>
+<p>这种写法，使得一个类看起来很散乱，没有整体的一个类的感觉。</p>
+<p>而在ES6中定义一个类的基本语法是这样的：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Class Person &#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">	 <span class="keyword">this</span>.name = <span class="string">'eason'</span>;</span><br><span class="line">	 <span class="keyword">this</span>.sex = <span class="string">'male'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  show() &#123;</span><br><span class="line">	 <span class="built_in">console</span>.log(<span class="string">'hi'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> aMan = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure></p>
+<p>这里有几个语法上的点需要注意：</p>
 <ol>
 <li>类名后面不要加括号</li>
 <li>类内部的constructor用来定义类内部的属性，如果没有显式的写入constructor，那么系统会自动加入一个空的constructor，这是必须的，因为在实例化的时候需要用到这个函数。</li>
@@ -263,12 +231,8 @@ let aMan = new Person();
 <li>实例化类的方式和以前一样。</li>
 </ol>
 <a id="more"></a>
-<p>其实ES6内的Class只是一个语法糖，就是说Class只是一个ES5定义类的语法的一个包装而已。ES6的类也有prototype等等的一些元素。</p>
-<pre><code>alert(typeof Person) //function
-alert(Person.prototype.constructor === Person) //true
-alert(Person.prototype.show) //弹出show函数的函数体
-alert(aMan.name) // eason
-</code></pre><p>从上面的实验可以看出几点：</p>
+<p>其实ES6内的Class只是一个语法糖，就是说Class只是一个ES5定义类的语法的一个包装而已。ES6的类也有prototype等等的一些元素。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="keyword">typeof</span> Person) <span class="comment">//function</span></span><br><span class="line">alert(Person.prototype.constructor === Person) <span class="comment">//true</span></span><br><span class="line">alert(Person.prototype.show) <span class="comment">//弹出show函数的函数体</span></span><br><span class="line">alert(aMan.name) <span class="comment">// eason</span></span><br></pre></td></tr></table></figure></p>
+<p>从上面的实验可以看出几点：</p>
 <ol>
 <li>其实类也就是一个函数对象而已，我们完全可以自己封装一个类的定义函数。</li>
 <li>ES6中写在类的构造函数内的属性，相当于在ES5中定义在构造函数内的属性。</li>
@@ -276,143 +240,45 @@ alert(aMan.name) // eason
 <li>ES6的类是个语法包装。方便代码的组织，让js面向对象编程更加清晰。</li>
 </ol>
 <p>下面继续ES6 class的语法</p>
-<p>###get、set</p>
-<pre><code>class MyClass {
-  constructor() {
-    // ...code
-  }
-  get prop() {
-    return &apos;getter&apos;;
-  }
-  set prop(value) {
-    console.log(&apos;setter: &apos;+value);
-  }
-}
-
-let inst = new MyClass();
-
-inst.prop = 123;
-// setter: 123
-
-inst.prop
-// &apos;getter&apos;
-</code></pre><p>上面类内定义了set与get方法，等价于ES5内的setter与getter，但是ES6内定义这两个方法相对直观，容易一些，ES5内定义这两种方法的具体实现可以看别人写的文章：<a href="https://segmentfault.com/a/1190000003882976" target="_blank" rel="external">浅谈 JS 对象添加 getter与 setter 的5种方法…..</a></p>
+<p>###get、set<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> </span>&#123;</span><br><span class="line">   <span class="keyword">constructor</span>() &#123;</span><br><span class="line">     <span class="comment">// ...code</span></span><br><span class="line">   &#125;</span><br><span class="line">   get prop() &#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="string">'getter'</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   set prop(value) &#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">'setter: '</span>+value);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> inst = <span class="keyword">new</span> MyClass();</span><br><span class="line"></span><br><span class="line">inst.prop = <span class="number">123</span>;</span><br><span class="line"><span class="comment">// setter: 123</span></span><br><span class="line"></span><br><span class="line">inst.prop</span><br><span class="line"><span class="comment">// 'getter'</span></span><br></pre></td></tr></table></figure></p>
+<p>上面类内定义了set与get方法，等价于ES5内的setter与getter，但是ES6内定义这两个方法相对直观，容易一些，ES5内定义这两种方法的具体实现可以看别人写的文章：<a href="https://segmentfault.com/a/1190000003882976" target="_blank" rel="external">浅谈 JS 对象添加 getter与 setter 的5种方法…..</a></p>
 <p>###静态方法</p>
-<p>就是在方法前加static关键字</p>
-<pre><code>class Foo {
-  static classMethod() {
-    return &apos;hello&apos;;
-  }
-}
-</code></pre><p>这样的方法实例是不能直接访问的，只能通过类本身来调用。但是子类是可以继承父类的静态方法的，而且super对象也可以调用静态<br>方法，super.staticFun()<br>但是es6没有静态属性的定义，但是可以通过class.prop的方法来创建，但是这样并不是理论上的静态，只是实际效果和静态是一<br>样的，这个es5也是支持的</p>
-<pre><code>function Class() {
-    this.one = &apos;one&apos;;
-}
-
-Class.prop = &apos;prop&apos;;
-
-var child = new Class();
-alert(Class.prop) // prop
-alert(child.prop) // undefined
-</code></pre><p>##继承<br>面向对象一个比较重要的东西就是继承，用ES6的写法可以很直观的写出类的继承，如下：<br>    class Person {<br>        constructor(a, b, c) {<br>            this.age = a;<br>            this.prop = b;<br>        }<br>        say() {<br>            alert(this.age);<br>        }<br>    }<br>    class Child extends Parent {<br>        constructor(a, b, c) {<br>            super(a, b);<br>            this.prop = ‘prop’;<br>        }</p>
-<pre><code>    show() {
-        super.show() //调用父类的show 方法
-    }
-}
-</code></pre><p>通过extends关键字来实现es6类的继承，花括号内同时可以定义子类自己的属性方法，并且ES6的继承还可以继承内置的类，如Number，Array等，这是ES5做不到的。一个关键的地方是<strong>super</strong>函数。</p>
+<p>就是在方法前加static关键字<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> classMethod() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'hello'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样的方法实例是不能直接访问的，只能通过类本身来调用。但是子类是可以继承父类的静态方法的，而且super对象也可以调用静态<br>方法，super.staticFun()<br>但是es6没有静态属性的定义，但是可以通过class.prop的方法来创建，但是这样并不是理论上的静态，只是实际效果和静态是一<br>样的，这个es5也是支持的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Class</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.one = <span class="string">'one'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Class.prop = <span class="string">'prop'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> child = <span class="keyword">new</span> Class();</span><br><span class="line">alert(Class.prop) <span class="comment">// prop</span></span><br><span class="line">alert(child.prop) <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure></p>
+<p>##继承<br>面向对象一个比较重要的东西就是继承，用ES6的写法可以很直观的写出类的继承，如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(a, b, c) &#123;</span><br><span class="line">		<span class="keyword">this</span>.age = a;</span><br><span class="line">		<span class="keyword">this</span>.prop = b;</span><br><span class="line">	&#125;</span><br><span class="line">	say() &#123;</span><br><span class="line">		alert(<span class="keyword">this</span>.age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Parent</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(a, b, c) &#123;</span><br><span class="line">		<span class="keyword">super</span>(a, b);</span><br><span class="line">		<span class="keyword">this</span>.prop = <span class="string">'prop'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	show() &#123;</span><br><span class="line">		<span class="keyword">super</span>.show() <span class="comment">//调用父类的show 方法</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过extends关键字来实现es6类的继承，花括号内同时可以定义子类自己的属性方法，并且ES6的继承还可以继承内置的类，如Number，Array等，这是ES5做不到的。一个关键的地方是<strong>super</strong>函数。</p>
 <p><strong>super</strong> 函数是必须被调用的，否则<strong>实例化子类的时候</strong>，会出错。这是因为这是因为子类没有自己的this对象，而是继承父类的this对象，然后对其进行加工。如果不调用super方法，子类就得不到this对象。</p>
 <p>super其实就是父类的一个实例对象也就是父类的this指针。<br><strong>不过super具体是个什么东西，更深层次的概念还没弄太懂，先留个坑</strong></p>
 <p>但是现在可以看到，super在不同语境下面，会有不同的身份，并且不是一个普通的函数，使用上有一些注意点。</p>
-<p>比如</p>
-<pre><code>class Child extends Parent {
-    constructor(a, b, c) {
-        this.prop = &apos;prop&apos;; //this is not defined
-        super(a, b);
-        console.log(super); //&apos;super&apos; keyword unexpected here
-    }
-
-    show() {
-        console.log(super.prop) // undefined
-        console.log(this.prop) // 正常输出
-        super.show() //调用父类的show 方法
-    }
-}
-</code></pre><ol>
+<p>比如<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Parent</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(a, b, c) &#123;</span><br><span class="line">		<span class="keyword">this</span>.prop = <span class="string">'prop'</span>; <span class="comment">//this is not defined</span></span><br><span class="line">		<span class="keyword">super</span>(a, b);</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">super</span>); <span class="comment">//'super' keyword unexpected here</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	show() &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">super</span>.prop) <span class="comment">// undefined</span></span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.prop) <span class="comment">// 正常输出</span></span><br><span class="line">		<span class="keyword">super</span>.show() <span class="comment">//调用父类的show 方法</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol>
 <li>super必须在最前面调用，否则子类的constructor函数内不存在this对象。调用super相当于执行了父类的constructor函数，得到了父类中的this。</li>
 <li>super作为关键字不能被直接输出。</li>
 <li>super内保存了父类内的方法，但是没有保存属性，属性可以通过this来调用。</li>
 </ol>
 <p>##这里顺便回顾一下es5的继承</p>
-<p>通常的做法是：<br>    function Car() {<br>        this.name = ‘car’;<br>        function f() {<br>            //…code<br>        }<br>    }</p>
-<pre><code>Car.prototype.show = function () {
-    alert(this.name);
-}
-
-function SportsCar() {
-    this.speed = &apos;123&apos;;
-}
-SportsCar.prototype = new Car();
-SportsCar.prototype.a = &apos;20&apos;;
-
-var aSportsCar = new SportsCar();
-</code></pre><p>首先说一下，new操作符大概的操作过程，也就是实例化过程。</p>
-<pre><code>new Car() ==&gt;
-Car() {
-    this = {}   //第一步
-    this.name = &apos;car&apos;;   //第二步
-    return this;   //第三步
-}
-</code></pre><p>所以实例就是父类的this指针。通过创建this，为this赋值，然后返回这个this指针，从而实现了对父类内的属性的复制, 也很容易看出没有通过this赋值的属性方法是不会被复制到实例对象内的。然后通过</p>
-<pre><code>SportsCar.prototype = new Car();
-</code></pre><p>把这个实例化对象又赋给了一个类的原型，实现了继承。 于是原型链就形成了，继承就完成了。</p>
+<p>通常的做法是：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">'car'</span>;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="comment">//...code</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Car.prototype.show = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SportsCar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.speed = <span class="string">'123'</span>;</span><br><span class="line">&#125;</span><br><span class="line">SportsCar.prototype = <span class="keyword">new</span> Car();</span><br><span class="line">SportsCar.prototype.a = <span class="string">'20'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aSportsCar = <span class="keyword">new</span> SportsCar();</span><br></pre></td></tr></table></figure></p>
+<p>首先说一下，new操作符大概的操作过程，也就是实例化过程。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Car() ==&gt;</span><br><span class="line">Car() &#123;</span><br><span class="line">	<span class="keyword">this</span> = &#123;&#125;   <span class="comment">//第一步</span></span><br><span class="line">	<span class="keyword">this</span>.name = <span class="string">'car'</span>;   <span class="comment">//第二步</span></span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>;   <span class="comment">//第三步</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>所以实例就是父类的this指针。通过创建this，为this赋值，然后返回这个this指针，从而实现了对父类内的属性的复制, 也很容易看出没有通过this赋值的属性方法是不会被复制到实例对象内的。然后通过<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SportsCar.prototype = <span class="keyword">new</span> Car();</span><br></pre></td></tr></table></figure></p>
+<p>把这个实例化对象又赋给了一个类的原型，实现了继承。 于是原型链就形成了，继承就完成了。</p>
 <p>当asportCard实例调用一个属性，如，aSportCard.prop，自然先到自己内部查找， 也就等同于到其对应类内查找（SportsCar），如果找不到，这时候，一个关键的东西就出现了， __proto__ 属性。__proto__ 属性才是原型链形成的关键所在。</p>
-<p>所有的函数，对象都有__proto__ 属性</p>
-<pre><code>SportsCar.prototype = new Car();
-var aSportsCar = new SportsCar();
-
-console.log(aSportsCar.__proto__=== SportsCar.prototype) //true
-console.log(SportsCar.prototype.__proto__ === Car.prototype) // true
-</code></pre><p>可以看出，一个实例的__proto__属性指向其对应类的原型对象，于是查找属性的过程是这样的：</p>
+<p>所有的函数，对象都有__proto__ 属性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SportsCar.prototype = <span class="keyword">new</span> Car();</span><br><span class="line"><span class="keyword">var</span> aSportsCar = <span class="keyword">new</span> SportsCar();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(aSportsCar.__proto__=== SportsCar.prototype) <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(SportsCar.prototype.__proto__ === Car.prototype) <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<p>可以看出，一个实例的__proto__属性指向其对应类的原型对象，于是查找属性的过程是这样的：</p>
 <p>先在实例本身内部查找，如果找不到就根据__proto__ 属性查找，也就是去对应类的原型上找，如果还找不到就根据这个原型的__proto__ 属性去找，一直重复<strong>直到找到</strong>或者到达<strong>原型链顶部</strong>。</p>
 <p>比如查找aSportCard.prop， 先到aSportCard自己内部查找，再到SportsCar.prototype，这里因为继承的缘故（ SportsCar.prototype = new Car() ），查找SportsCar.prototype就相当于查找 Car类的一个实例，这里是不是又回到了之前的步骤了，在一个实例内部查找。 所以依次往下找， 无论多少次继承都是这样的模式。 这就是查找原型链， 而SportsCar.prototype = new Car() 这句话，就相当于将所有被继承类的内部属性拷贝到子类的原型上， 这样就很好说明了， 为什么基于原型继承的js，通过查找原型链的方式实现的继承，连类内部的属性也会继承下来。</p>
 <p>还有一点就是，通过new创造出来的实例，只有__proto__ 属性，而没有prototype属性，这也是显然的，因为实例不需要也不能被继承，自然不需要带上用于继承的prototype属性。</p>
 <p>上面还提到了<strong>原型链顶部</strong>，原型链的顶部是什么呢？</p>
-<p>还是上面的例子，最高层的类是Car， 但是Car类的原型，并不是原型链的最高层， 不要忘了还有js的内置对象。</p>
-<pre><code>console.log(Car.prototype)
-console.log(Car.prototype.__proto__)
-console.log(Object.prototype)
-console.log(Object.prototype.__proto__)
-</code></pre><p>结果如下</p>
+<p>还是上面的例子，最高层的类是Car， 但是Car类的原型，并不是原型链的最高层， 不要忘了还有js的内置对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(Car.prototype)</span><br><span class="line"><span class="built_in">console</span>.log(Car.prototype.__proto__)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.__proto__)</span><br></pre></td></tr></table></figure></p>
+<p>结果如下</p>
 <p><img src="1.png" alt=""></p>
 <p>最后的null表示结束了，也就是说，原型链的最高层是Object.prototype。</p>
-<p>其实之前有说到__proto__ ，每个函数、对象内都有，自然不单单存在于原型对象上，类也是函数，自然也存在</p>
-<pre><code>//又是一系列的输出
-1. console.log(Car.__proto__)
-2. console.log(SportsCar.__proto__)
-3. console.log(Function.__proto__)
-4. console.log(Function.prototype)
-5. console.log(Object.__proto__)
-6. console.log(Function.prototype.__proto__)
-</code></pre><p>下面是结果</p>
+<p>其实之前有说到__proto__ ，每个函数、对象内都有，自然不单单存在于原型对象上，类也是函数，自然也存在<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//又是一系列的输出</span></span><br><span class="line"><span class="number">1.</span> <span class="built_in">console</span>.log(Car.__proto__)</span><br><span class="line"><span class="number">2.</span> <span class="built_in">console</span>.log(SportsCar.__proto__)</span><br><span class="line"><span class="number">3.</span> <span class="built_in">console</span>.log(<span class="built_in">Function</span>.__proto__)</span><br><span class="line"><span class="number">4.</span> <span class="built_in">console</span>.log(<span class="built_in">Function</span>.prototype)</span><br><span class="line"><span class="number">5.</span> <span class="built_in">console</span>.log(<span class="built_in">Object</span>.__proto__)</span><br><span class="line"><span class="number">6.</span> <span class="built_in">console</span>.log(<span class="built_in">Function</span>.prototype.__proto__)</span><br></pre></td></tr></table></figure></p>
+<p>下面是结果</p>
 <p><img src="2.png" alt=""></p>
 <p>其实构造函数直接也是存在继承关系的，不过都是继承于Function.prototype， 就连 Function自己都是继承于Function.prototype。。。， 因为__proto__的指向说明了继承关系。特别需要注意的是上面5 6两段代码，第5个 说明了， 其实Object这个函数，或者说这个构造函数也是继承于Function的， 而第6段代码的输出也很熟悉了， 就是Object.prototype， 其实也说明了， 所有原型最终都是继承自Object.prototype，这是每条原型链的终点。</p>
-<p>5 6两段代码的输出，似乎Object与Function这两个构造函数，有一种你中有我我中有你的感觉，其实也确实是这样的。</p>
-<pre><code>Object instanceof Function  // true
-Function instanceof Object  // true 
-Object instanceof Object  // true
-Function instanceof Function //true
-Number instanceof Number  //false
-Array instanceof Array  //false    
-</code></pre><p>其实instanceof 操作符的内部实现是根据<strong>proto</strong>属性在原型链上一直找到底，如下</p>
-<pre><code>function Parent() {
-    this.one = &apos;one&apos;;
-}
-Parent.prototype.one = &apos;two&apos;;
-var Child.prototype = new Parent(); //Child 类继承Parent类
-var obj = new Child();
-obj instanceof Child   //true
-obj instanceof Parent     //true
-</code></pre>
+<p>5 6两段代码的输出，似乎Object与Function这两个构造函数，有一种你中有我我中有你的感觉，其实也确实是这样的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span> <span class="keyword">instanceof</span> <span class="built_in">Function</span>  <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Function</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>  <span class="comment">// true </span></span><br><span class="line"><span class="built_in">Object</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>  <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Function</span> <span class="keyword">instanceof</span> <span class="built_in">Function</span> <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Number</span> <span class="keyword">instanceof</span> <span class="built_in">Number</span>  <span class="comment">//false</span></span><br><span class="line"><span class="built_in">Array</span> <span class="keyword">instanceof</span> <span class="built_in">Array</span>  <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
+<p>其实instanceof 操作符的内部实现是根据<strong>proto</strong>属性在原型链上一直找到底，如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.one = <span class="string">'one'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Parent.prototype.one = <span class="string">'two'</span>;</span><br><span class="line"><span class="keyword">var</span> Child.prototype = <span class="keyword">new</span> Parent(); <span class="comment">//Child 类继承Parent类</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Child();</span><br><span class="line">obj <span class="keyword">instanceof</span> Child   <span class="comment">//true</span></span><br><span class="line">obj <span class="keyword">instanceof</span> Parent     <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
