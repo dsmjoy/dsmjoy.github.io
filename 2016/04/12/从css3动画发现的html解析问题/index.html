@@ -4,17 +4,29 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Embrace</title>
+  <title>从css3动画说起——浏览器渲染 | Embrace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Embrace">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="css3动画很早就开始用了，实践的机会也不多，容易忽视很多细节。前几天就发现一个问题，关于css3里的transition属性的问题。
+transition是这样定义的：按时发生放撒发送发送放大是否
+用法简单的就是，比如1transition：height 1s linear
+定义和用法用法是十分简单的。只要transition的属性值里写入的属性发生变化，transition就能捕获到这个变化，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从css3动画说起——浏览器渲染">
+<meta property="og:url" content="http://yoursite.com/2016/04/12/从css3动画发现的html解析问题/index.html">
 <meta property="og:site_name" content="Embrace">
-<meta property="og:description">
+<meta property="og:description" content="css3动画很早就开始用了，实践的机会也不多，容易忽视很多细节。前几天就发现一个问题，关于css3里的transition属性的问题。
+transition是这样定义的：按时发生放撒发送发送放大是否
+用法简单的就是，比如1transition：height 1s linear
+定义和用法用法是十分简单的。只要transition的属性值里写入的属性发生变化，transition就能捕获到这个变化，">
+<meta property="og:image" content="http://yoursite.com/1.png">
+<meta property="og:updated_time" content="2016-04-12T13:38:12.680Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Embrace">
-<meta name="twitter:description">
+<meta name="twitter:title" content="从css3动画说起——浏览器渲染">
+<meta name="twitter:description" content="css3动画很早就开始用了，实践的机会也不多，容易忽视很多细节。前几天就发现一个问题，关于css3里的transition属性的问题。
+transition是这样定义的：按时发生放撒发送发送放大是否
+用法简单的就是，比如1transition：height 1s linear
+定义和用法用法是十分简单的。只要transition的属性值里写入的属性发生变化，transition就能捕获到这个变化，">
+<meta name="twitter:image" content="http://yoursite.com/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Embrace" type="application/atom+xml">
   
@@ -171,9 +183,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-从css3动画发现的html解析问题" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-从css3动画发现的html解析问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/04/12/从css3动画发现的html解析问题/" class="article-date">
@@ -189,12 +199,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/12/从css3动画发现的html解析问题/">从css3动画说起——浏览器渲染</a>
+    <h1 class="article-title" itemprop="name">
+      从css3动画说起——浏览器渲染
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -226,105 +247,68 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/09/es6_class/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ES2015之class</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
-
-
-
-
-
-
-
-  
-    <article id="post-es6_class" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/09/es6_class/" class="article-date">
-  	<time datetime="2016-03-09T02:57:39.408Z" itemprop="datePublished">2016-03-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/09/es6_class/">ES2015之class</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>随着ES2015（下面都用其别名ES6代替）的诞生，js的标准内定义一个类的语法和一些常见的面向对象的语言类似了，有了class后，js的面向对象写法更加清晰，方便。</p>
-<p>在ES5的时候，最常用到的定义类及其属性、方法的语法应该是下面这种：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'BMW'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.show = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aCar = <span class="keyword">new</span> Car();</span><br></pre></td></tr></table></figure>
-<p>这种写法，使得一个类看起来很散乱，没有整体的一个类的感觉。</p>
-<p>而在ES6中定义一个类的基本语法是这样的：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Class Person &#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">	 <span class="keyword">this</span>.name = <span class="string">'eason'</span>;</span><br><span class="line">	 <span class="keyword">this</span>.sex = <span class="string">'male'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  show() &#123;</span><br><span class="line">	 <span class="built_in">console</span>.log(<span class="string">'hi'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> aMan = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
-<h5 id="这里有几个语法上的点需要注意："><a href="#这里有几个语法上的点需要注意：" class="headerlink" title="这里有几个语法上的点需要注意："></a>这里有几个语法上的点需要注意：</h5><ol>
-<li>类名后面不要加括号</li>
-<li>类内部的constructor用来定义类内部的属性，如果没有显式的写入constructor，那么系统会自动加入一个空的constructor，这是必须的，因为在实例化的时候需要用到这个函数。</li>
-<li>类内的所有方法的定义不再需要用到function关键字，并且所有方法之间不能用分号隔开，否则报错。</li>
-<li>实例化类的方式和以前一样。</li>
-</ol>
-<hr>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/09/es6_class/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
 
 
 
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="从css3动画发现的html解析问题" data-title="从css3动画说起——浏览器渲染" data-url="http://yoursite.com/2016/04/12/从css3动画发现的html解析问题/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
-  
-  
+
 </div>
       <footer id="footer">
   <div class="outer">
@@ -348,8 +332,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
