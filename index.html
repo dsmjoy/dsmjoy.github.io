@@ -107,7 +107,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/es6/" style="font-size: 10px;">es6</a>
+						<a href="/tags/browser/" style="font-size: 20px;">browser</a> <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/js/" style="font-size: 10px;">js</a>
 					</div>
 				</section>
 				
@@ -173,6 +173,79 @@
 
       <div class="body-wrap">
   
+    <article id="post-跨域" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/13/跨域/" class="article-date">
+  	<time datetime="2016-04-13T02:43:18.264Z" itemprop="datePublished">2016-04-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/13/跨域/">浏览器跨域问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>同源的条件为：<strong>协议，域名，端口均相同</strong>。</p>
+<p>要特别注意的是：</p>
+<ol>
+<li>二级域名和一级域名就不算同一个域。如，erji.a.com 与 a.com 算<strong>不同源</strong></li>
+<li>www前缀的有无也算不同的域。如www.a.com 与 a.com 算<strong>不同源</strong></li>
+<li>文件路径的不同不算跨域。www.a.com/a.html , www.a.com/b.html算<strong>同源</strong></li>
+</ol>
+<p>尤其需要注意的是第二点。</p>
+<p>一个域名前带www和不带www就变成不同源了，如果nginx解析了，自然带不带www都能访问到同一个地方，没有www前缀的域去访问带www前缀域的资源就需要跨域了。</p>
+<p>这需要改变一些习惯。</p>
+<p>比如写ajax的时候，访问的路径最好都会写成相对路径的访问方式，不然会带来意外的跨域错误。而link，script，img，iframe等不存在跨域问题，相对绝对路径没有太大关系。</p>
+<p>另外，针对上面的第二点，有一些解决方案</p>
+<ol>
+<li>将带有www.都跳转处理为不带www的，反之亦可，需要服务器修改配置；</li>
+<li>同一个网站内，不使用带完整域名的引用，也就是上面提到的相对路径的访问方式；</li>
+<li>可以在需要跨域的文件添加document.domain=”你的域名(带www或者不带www的均可，建议不带www的)”;</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browser/">browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-从css3动画发现的html解析问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -207,22 +280,6 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line">	<span class="selector-id">#box</span>&#123;</span><br><span class="line">		<span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">		<span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">		<span class="attribute">background</span>: red;</span><br><span class="line">	&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    	</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span><br><span class="line">	<span class="built_in">document</span>.querySelector(<span class="string">'#box'</span>).style.height = <span class="string">'300px'</span>;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>通过这样的js修改元素的属性，这样的<strong>变化</strong>能被transition捕获到吗？</p>
 <p>答案是不能的。打开页面元素高度直接变为300px而不是从200渐变到300。</p>
-<p>而另外一种情况，这个渐变却可以发生。如下</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line">	<span class="selector-id">#box</span>&#123;</span><br><span class="line">		<span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">		<span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">		<span class="attribute">background</span>: red;</span><br><span class="line">		<span class="attribute">transition</span>: height <span class="number">1s</span> linear;</span><br><span class="line">	&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    	</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span><br><span class="line">	<span class="built_in">document</span>.querySelector(<span class="string">'#box'</span>).style.height = <span class="string">'300px'</span>;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在原来的script标签之前加上一个script标签并且引入一个jquery，这个渐变神奇的又产生了。</p>
-<p>经过网上一番查资料和思考，感觉这个应该和浏览器的绘制过程有关系。摸索过程中发现chrome的Timeline工具，真的是神器啊，Timeline可以记录整个文档从加载开始到完成的一系列动作，包括页面的绘制等等。</p>
-<p>在第一种情况之下，timeline是这样的，只有一次Paint。<br><img src="1.png" alt=""></p>
-<p>第二种情况，timeline上出现了两次绘制，第一次出现在解析完第一个script标签之前的文档元素后，第二次出现在jquery引入完成后，文档完全解析完之后。也就是说第一次绘制，box高度被绘制为200px，而第二次绘制变成了300px，这时候会更新渲染树，触使浏览器重新绘制dom，这时候就产生了<strong>变化</strong>，所以出现了渐变的过程。</p>
-<p>我觉得这也是一个很合理的过程，在另外一些情况，比如把jquery的script放在head内，那么无论如何这个dom的渲染只有一次，因此不会产生渐变。而这个script放在dom之下的时候，dom的绘制，渲染可以立刻进行，也可以不马上进行，因为除了style内有对元素样式的改变，通过js也是可以将样式改变的，这时候如果执行完所有的js再进行绘制那么，浏览器的效率肯定是更高的。而上面说到的第二张情况，因为script标签是堵塞的，这时候提前进行绘制才是合理的。</p>
-<p>如果把引入jquery改为引入一个空的js文件，那么这个渐变时有时无，我觉得也是合理的，毕竟这个js的引入所花费的时间时长时短，所以我猜测应该有一个标准来衡量这个时间吧，但是并没有看到相关资料。</p>
-<hr>
-<p>以上只是根据timeline展示进行的推测，没有找到相关文字资料。留个坑。。。。。</p>
-<hr>
-<p>在不断尝试，实验的过程中，发现了一下细节，这里记录一下。</p>
-<p>1.DOMContentLoaded 事件的使用。通过docuemnt.addEventListener 来添加。这个事件触发是在页面的所有js文件运行或者加载完成后才会被触发。 但是不包括外部的css和图片的引入完成。</p>
-<p>其实jquery的$(document).ready(function(){});就是对这个事件的封装，做了一些兼容。相对于onload事件，DOMContentLoaded更加宽容一些，允许页面结构加载完成，不带上样式，但是不允许js的缺失，也就是交互的缺失。</p>
-<p>但是其实浏览器并不是这样做的，在script前引入样式，会等待样式引入完成才引入js</p>
-
       
     </div>
     
@@ -230,11 +287,15 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browser/">browser</a></li></ul>
 	</div>
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/12/从css3动画发现的html解析问题/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
