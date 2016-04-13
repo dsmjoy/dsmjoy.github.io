@@ -7,25 +7,22 @@
   <title>从css3动画说起——浏览器渲染 | Embrace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="css3动画很早就开始用了，实践的机会也不多，容易忽视很多细节。前几天就发现一个问题，关于css3里的transition属性的问题。
-transition是这样定义的：按时发生放撒发送发送放大是否
 用法简单的就是，比如1transition：height 1s linear
-定义和用法用法是十分简单的。只要transition的属性值里写入的属性发生变化，transition就能捕获到这个变化，">
+定义和用法用法是十分简单的。只要transition的属性值里写入的属性发生变化，transition就能捕获到这个变化，然后让这个变化逐渐的完成，而不是立即完成。而关键点就是这个变化。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从css3动画说起——浏览器渲染">
 <meta property="og:url" content="http://yoursite.com/2016/04/12/从css3动画发现的html解析问题/index.html">
 <meta property="og:site_name" content="Embrace">
 <meta property="og:description" content="css3动画很早就开始用了，实践的机会也不多，容易忽视很多细节。前几天就发现一个问题，关于css3里的transition属性的问题。
-transition是这样定义的：按时发生放撒发送发送放大是否
 用法简单的就是，比如1transition：height 1s linear
-定义和用法用法是十分简单的。只要transition的属性值里写入的属性发生变化，transition就能捕获到这个变化，">
+定义和用法用法是十分简单的。只要transition的属性值里写入的属性发生变化，transition就能捕获到这个变化，然后让这个变化逐渐的完成，而不是立即完成。而关键点就是这个变化。">
 <meta property="og:image" content="http://yoursite.com/1.png">
-<meta property="og:updated_time" content="2016-04-13T03:03:51.759Z">
+<meta property="og:updated_time" content="2016-04-13T08:18:30.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从css3动画说起——浏览器渲染">
 <meta name="twitter:description" content="css3动画很早就开始用了，实践的机会也不多，容易忽视很多细节。前几天就发现一个问题，关于css3里的transition属性的问题。
-transition是这样定义的：按时发生放撒发送发送放大是否
 用法简单的就是，比如1transition：height 1s linear
-定义和用法用法是十分简单的。只要transition的属性值里写入的属性发生变化，transition就能捕获到这个变化，">
+定义和用法用法是十分简单的。只要transition的属性值里写入的属性发生变化，transition就能捕获到这个变化，然后让这个变化逐渐的完成，而不是立即完成。而关键点就是这个变化。">
 <meta name="twitter:image" content="http://yoursite.com/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Embrace" type="application/atom+xml">
@@ -82,7 +79,7 @@ transition是这样定义的：按时发生放撒发送发送放大是否
 						<li>Tags</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -221,7 +218,6 @@ transition是这样定义的：按时发生放撒发送发送放大是否
     <div class="article-entry" itemprop="articleBody">
       
         <p>css3动画很早就开始用了，实践的机会也不多，容易忽视很多细节。前几天就发现一个问题，关于css3里的transition属性的问题。</p>
-<p>transition是这样定义的：按时发生放撒发送发送放大是否</p>
 <p>用法简单的就是，比如<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transition：<span class="built_in">height</span> 1s <span class="built_in">linear</span></span><br></pre></td></tr></table></figure></p>
 <p>定义和用法用法是十分简单的。只要transition的属性值里写入的属性<strong>发生变化</strong>，transition就能捕获到这个变化，然后让这个变化逐渐的完成，而不是立即完成。而关键点就是这个<strong>变化</strong>。</p>
 <p>来看一段代码，简化版，只保留了必要的东西</p>
@@ -238,13 +234,18 @@ transition是这样定义的：按时发生放撒发送发送放大是否
 <p>我觉得这也是一个很合理的过程，在另外一些情况，比如把jquery的script放在head内，那么无论如何这个dom的渲染只有一次，因此不会产生渐变。而这个script放在dom之下的时候，dom的绘制，渲染可以立刻进行，也可以不马上进行，因为除了style内有对元素样式的改变，通过js也是可以将样式改变的，这时候如果执行完所有的js再进行绘制那么，浏览器的效率肯定是更高的。而上面说到的第二张情况，因为script标签是堵塞的，这时候提前进行绘制才是合理的。</p>
 <p>如果把引入jquery改为引入一个空的js文件，那么这个渐变时有时无，我觉得也是合理的，毕竟这个js的引入所花费的时间时长时短，所以我猜测应该有一个标准来衡量这个时间吧，但是并没有看到相关资料。</p>
 <hr>
-<p>以上只是根据timeline展示进行的推测，没有找到相关文字资料。留个坑。。。。。</p>
+<p>以上只是根据timeline展示进行的推测，没有找到太多的相关文字资料。</p>
+<p>另外，从timeline里还可以看出很多东西。</p>
+<ol>
+<li>对html文档的解析，基本是分段来的，大概是以有引入外部js的script标签为节点。</li>
+<li>一次绘制基本涉及4个步骤（Recalculate style 、 Layout 、 Updata Layer Tree 、 Paint 、 Composite Layer）</li>
+</ol>
+<p>……………这里简单的讲讲，具体等看更多资料后来完善</p>
 <hr>
-<p>在不断尝试，实验的过程中，发现了一下细节，这里记录一下。</p>
+<p>在实验的过程中，发现了一细节，这里记录一下。</p>
 <p>1.DOMContentLoaded 事件的使用。通过docuemnt.addEventListener 来添加。这个事件触发是在页面的所有js文件运行或者加载完成后才会被触发。 但是不包括外部的css和图片的引入完成。</p>
 <p>其实jquery的$(document).ready(function(){});就是对这个事件的封装，做了一些兼容。相对于onload事件，DOMContentLoaded更加宽容一些，允许页面结构加载完成，不带上样式，但是不允许js的缺失，也就是交互的缺失。</p>
-<p>但是其实浏览器并不是这样做的，在script前引入样式，会等待样式引入完成才引入js</p>
-<p>2.getComputedStyle</p>
+<p>但是其实浏览器并不是完全这样做的，如果在script前引入样式，会等待样式引入完成才引入js</p>
 
       
     </div>
